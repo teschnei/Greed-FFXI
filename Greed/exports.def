@@ -1,0 +1,5 @@
+LIBRARY "Greed"
+EXPORTS
+    GetInterfaceVersion
+    CreatePluginData
+    CreatePlugin
