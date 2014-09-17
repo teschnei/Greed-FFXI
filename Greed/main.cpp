@@ -373,6 +373,7 @@ void Greed::Direct3DRender(void)
             }
             tx->SetText(txString.c_str());
             if (m_AshitaCore->GetDataManager()->GetParty()->GetPartyMemberZone(i) != m_AshitaCore->GetDataManager()->GetParty()->GetPartyMemberZone(0) ||
+                !(m_AshitaCore->GetDataManager()->GetEntity()->GetRenderFlag1(index) & 0x200) ||
                 m_AshitaCore->GetDataManager()->GetEntity()->GetDistance(index) > config.faderange)
             {
                 bg->GetBackground()->SetColor((bg->GetBackground()->GetColor() & 0x00FFFFFF) | (0x10 << 24));
@@ -432,7 +433,7 @@ void Greed::LoadSettings()
         xmlFile = new rapidxml::file<>(szConfigPath);
         settings.parse<0>(xmlFile->data());
     }
-    catch (std::runtime_error& e)
+    catch (std::exception& e)
     {
         m_AshitaCore->GetChatManager()->Write("Greed: Could not load settings: %s", e.what());
         return;
