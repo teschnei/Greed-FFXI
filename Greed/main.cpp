@@ -224,7 +224,7 @@ bool Greed::Direct3DInitialize(IDirect3DDevice8* lpDevice)
             bg->SetPosition(right ? -config.padding : config.padding, 0);
         }
         bg->SetVisibility(true);
-        bg->SetClickFunction(g_onClick);
+        bg->SetClickFunction([](int type, void* font, float xPos, float yPos){g_Greed->onClick(type, (IFontObject*)font, xPos, yPos); });
         bg->GetBackground()->SetTextureFromFile(texPath.c_str());
 
         sprintf_s(alias, sizeof alias, "GreedFG%d", i);
@@ -436,6 +436,7 @@ void Greed::LoadSettings()
     catch (std::exception& e)
     {
         m_AshitaCore->GetChatManager()->Write("Greed: Could not load settings: %s", e.what());
+        m_AshitaCore->GetChatManager()->Write("Greed: If this is your first time running Greed, you'll need to make a profile in Config/Greed.xml (use the profile in Docs for reference)");
         return;
     }
 
@@ -612,9 +613,4 @@ void Greed::onClick(int type, IFontObject* font, float xPos, float yPos)
             }
         }
     }
-}
-
-void g_onClick(int type, void* font, float xPos, float yPos)
-{
-    g_Greed->onClick(type, (IFontObject*)font, xPos, yPos);
 }

@@ -1,0 +1,28 @@
+<settings>
+    <!--<faderange>20</faderange>
+    <fontsize>10</fontsize>
+    <gridsize>36</gridsize>
+    <padding>3</padding>
+    <spacing>3</spacing>
+    <xpos>-690</xpos>
+    <ypos>-16</ypos>
+    <anchor>2</anchor>
+    <fgred>40</fgred>
+    <fggreen>25</fggreen>
+    <fgblue>10</fgblue>
+    <bgred>255</bgred>
+    <bggreen>128</bggreen>
+    <bgblue>0</bgblue>
+    <jobcolored>true</jobcolored>-->
+</settings>
+<sch>
+    <lclick>/ma "Cure III"</lclick>
+    <rclick>/ma "Cure IV"</rclick>
+    <mclick>/ma "Blindna"</mclick>
+    <lclick modifier="ctrl">/target</lclick>
+    <lclick modifier="alt">/ma "Haste"</lclick>
+    <rclick modifier="ctrl">/ma "Poisona"</rclick>
+    <rclick modifier="alt">/ma "Paralyna"</rclick>
+    <button4>/ma "Stona"</button4>
+    <button5>/ma "Regen V"</button5>
+</sch>

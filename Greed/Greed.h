@@ -51,8 +51,6 @@
 #define WBUFU(p,pos) (*(uint64_t*)WBUFP((p),(pos)))
 #define WBUFF(p,pos) (*(float*)WBUFP((p),(pos)))
 
-void g_onClick(int, void*, float, float);
-
 /**
  * @brief Global copy of our plugin data.
  */
