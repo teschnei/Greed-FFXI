@@ -72,7 +72,7 @@ struct config_t
     uint8_t padding;
     uint8_t Greedsize;
     uint8_t fontsize;
-    uint16_t faderange;
+    float faderange;
     Ashita::Enums::FrameAnchor anchor;
     float x;
     float y;
