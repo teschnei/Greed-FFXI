@@ -446,7 +446,7 @@ void Greed::LoadSettings()
     {
         auto setNode = node->first_node("faderange");
         if (setNode)
-            config.faderange = pow(atoi(setNode->value()),2);
+            config.faderange = pow(atof(setNode->value()),2);
 
         setNode = node->first_node("fontsize");
         if (setNode)
